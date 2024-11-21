@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AspireDemo.Api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d9666fa81244231fd4e2bd0884c8832fd5171435")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+73a0ec09be1fd20f31c8195cde213bd54004f060")]
 [assembly: System.Reflection.AssemblyProductAttribute("AspireDemo.Api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AspireDemo.Api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
