@@ -1,0 +1,92 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\dewolro\\Desktop\\netAspire\\AspireDemo\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{27169A0E-BFB4-4793-A6CC-0BA2FA0280C7}|Aspire\\Aspire.ApiService\\Aspire.ApiService.csproj|c:\\users\\dewolro\\desktop\\netaspire\\aspiredemo\\aspire\\aspire.apiservice\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{27169A0E-BFB4-4793-A6CC-0BA2FA0280C7}|Aspire\\Aspire.ApiService\\Aspire.ApiService.csproj|solutionrelative:aspire\\aspire.apiservice\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F1661ABA-80E0-4FAD-A81F-22F792994A4B}|Aspire\\Aspire.Web\\Aspire.Web.csproj|c:\\users\\dewolro\\desktop\\netaspire\\aspiredemo\\aspire\\aspire.web\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F1661ABA-80E0-4FAD-A81F-22F792994A4B}|Aspire\\Aspire.Web\\Aspire.Web.csproj|solutionrelative:aspire\\aspire.web\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{099F4AF2-F295-4ADA-B80D-99F47AE29F43}|Aspire\\Aspire.AppHost\\Aspire.AppHost.csproj|c:\\users\\dewolro\\desktop\\netaspire\\aspiredemo\\aspire\\aspire.apphost\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{099F4AF2-F295-4ADA-B80D-99F47AE29F43}|Aspire\\Aspire.AppHost\\Aspire.AppHost.csproj|solutionrelative:aspire\\aspire.apphost\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{27DC0846-1362-4FED-9638-5F42248984C7}|Aspire\\Aspire.ServiceDefaults\\Aspire.ServiceDefaults.csproj|c:\\users\\dewolro\\desktop\\netaspire\\aspiredemo\\aspire\\aspire.servicedefaults\\extensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{27DC0846-1362-4FED-9638-5F42248984C7}|Aspire\\Aspire.ServiceDefaults\\Aspire.ServiceDefaults.csproj|solutionrelative:aspire\\aspire.servicedefaults\\extensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\dewolro\\Desktop\\netAspire\\AspireDemo\\Aspire\\Aspire.Web\\Program.cs",
+              "RelativeDocumentMoniker": "Aspire\\Aspire.Web\\Program.cs",
+              "ToolTip": "C:\\Users\\dewolro\\Desktop\\netAspire\\AspireDemo\\Aspire\\Aspire.Web\\Program.cs",
+              "RelativeToolTip": "Aspire\\Aspire.Web\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-21T18:32:21.499Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Extensions.cs",
+              "DocumentMoniker": "C:\\Users\\dewolro\\Desktop\\netAspire\\AspireDemo\\Aspire\\Aspire.ServiceDefaults\\Extensions.cs",
+              "RelativeDocumentMoniker": "Aspire\\Aspire.ServiceDefaults\\Extensions.cs",
+              "ToolTip": "C:\\Users\\dewolro\\Desktop\\netAspire\\AspireDemo\\Aspire\\Aspire.ServiceDefaults\\Extensions.cs",
+              "RelativeToolTip": "Aspire\\Aspire.ServiceDefaults\\Extensions.cs",
+              "ViewState": "AQIAAFUAAAAAAAAAAAAkwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-21T18:31:58.091Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\dewolro\\Desktop\\netAspire\\AspireDemo\\Aspire\\Aspire.ApiService\\Program.cs",
+              "RelativeDocumentMoniker": "Aspire\\Aspire.ApiService\\Program.cs",
+              "ToolTip": "C:\\Users\\dewolro\\Desktop\\netAspire\\AspireDemo\\Aspire\\Aspire.ApiService\\Program.cs",
+              "RelativeToolTip": "Aspire\\Aspire.ApiService\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-21T18:30:57.093Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\dewolro\\Desktop\\netAspire\\AspireDemo\\Aspire\\Aspire.AppHost\\Program.cs",
+              "RelativeDocumentMoniker": "Aspire\\Aspire.AppHost\\Program.cs",
+              "ToolTip": "C:\\Users\\dewolro\\Desktop\\netAspire\\AspireDemo\\Aspire\\Aspire.AppHost\\Program.cs",
+              "RelativeToolTip": "Aspire\\Aspire.AppHost\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAA+AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-21T18:30:23.203Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
