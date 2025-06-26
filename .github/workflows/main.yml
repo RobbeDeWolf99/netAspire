@@ -1,0 +1,114 @@
+trigger:
+  - main
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+jobs:
+  - job: release_notes
+    displayName: "Generate release notes"
+    steps:
+      # Stap 1: Haal de componentnaam uit de repo-naam
+      - task: Bash@3
+        name: setComponentName
+        inputs:
+          targetType: 'inline'
+          script: |
+            component=$(basename $(Build.Repository.Name))
+            echo "Repository name detected: $component"
+            echo "##vso[task.setvariable variable=componentName]$component"
+
+      # Stap 2: Haal alle geschiedenis op en alle tags
+      - checkout: self
+        fetchDepth: 0  # Hiermee haal je de volledige Git-geschiedenis op
+
+      # Stap 3: Haal de laatste git-tag op
+      - task: Bash@3
+        name: getReleaseVersion
+        inputs:
+          targetType: 'inline'
+          script: |
+            # Haal de laatste git-tag op
+            git fetch --tags
+            RELEASE_TAG=$(git describe --tags $(git rev-list --tags --max-count=1))
+            echo "Release version: $RELEASE_TAG"
+            echo "##vso[task.setvariable variable=ReleaseVersion]$RELEASE_TAG"
+
+      # Stap 4: Clone de repository met de template file naar een aparte map
+      - task: Bash@3
+        name: cloneTemplateRepo
+        inputs:
+          targetType: 'inline'
+          script: |
+            echo "Cloning template repository..."
+            git config --global credential.helper store
+            git clone https://$(System.AccessToken)@mohawkind.visualstudio.com/DefaultCollection/Plant%20Applications%20ROW/_git/release-notes $(Build.SourcesDirectory)/release-notes-template
+
+      # Stap 5: Genereer release notes met de template
+      - task: XplatGenerateReleaseNotes@4.21.2
+        inputs:
+          outputfile: '$(Build.SourcesDirectory)/changelogs.md'
+          templateLocation: 'File'
+          templatefile: '$(Build.SourcesDirectory)/release-notes-template/releasenotes-template.md'  # Pad naar de template in de gekloonde repo
+          replaceFile: True
+          getParentsAndChildren: True
+          getAllParents: True
+          getIndirectPullRequests: True
+          stopOnError: False
+          considerPartiallySuccessfulReleases: False
+          checkForManuallyLinkedWI: True
+          wiqlFromTarget: 'WorkItems'
+
+      # Stap 6: Publiceer changelog als artifact
+      - task: PublishPipelineArtifact@1
+        inputs:
+          targetPath: '$(Build.SourcesDirectory)/changelogs.md'
+          artifactName: "changelogs.md"
+          artifactType: "pipeline"
+
+      # Stap 7: Maak wiki-pagina aan met changelog en de release versie
+      - task: PowerShell@2
+        inputs:
+          targetType: 'inline'
+          script: |
+            $ErrorActionPreference = "Stop"
+
+            $org = "https://dev.azure.com/mohawkind"
+            $project = "Plant Applications ROW"
+            $wiki = "Plant-Applications-ROW.wiki"
+            $component = "$(componentName)"
+            $version = "$(ReleaseVersion)"
+            $basePath = "Shopfloor MES Teams Ops/Releases"
+            $componentPath = "$basePath/$component"
+            $finalPath = "$componentPath/Version $version"
+
+            # Controleer of de componentmap bestaat
+            $check = az devops wiki page show `
+                --wiki $wiki `
+                --path "$componentPath" `
+                --org $org `
+                --project $project 2>&1
+
+            if ($LASTEXITCODE -ne 0) {
+              Write-Host "Componentpagina bestaat nog niet. Aanmaken: $componentPath"
+              az devops wiki page create `
+                --wiki $wiki `
+                --path "$componentPath" `
+                --org $org `
+                --project "$project" `
+                --content "Componentpagina voor $component"
+            }
+            else {
+              Write-Host "Componentpagina bestaat al: $componentPath"
+            }
+
+            # Nu changelogpagina aanmaken met inhoud
+            az devops wiki page create `
+              --wiki $wiki `
+              --path "$finalPath" `
+              --org $org `
+              --project $project `
+              --file-path '$(Build.SourcesDirectory)/changelogs.md' `
+              --comment "Automatisch gegenereerde release notes"
+        env:
+          AZURE_DEVOPS_EXT_PAT: $(System.AccessToken)
